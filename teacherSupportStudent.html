@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
         crossorigin="anonymous">
     <link type="text/css" href="./teacherSupportCSS.css" rel="stylesheet" media="screen" />
+    <script>
+        $("#files").change(function() {
+  filename = this.files[0].name
+  console.log(filename);
+});
+    </script>
 </head>
 
 <body>
@@ -82,7 +88,7 @@
                     <!--Tu ten button cos jest dziwny-->
                 </form>
                 <div class="text-right mt-2">
-                    <button type="submit" form="newGroupForm" class="btn mt-2">Add</button>
+                    <button type="submit" form="newGroupForm" class="btn mt-2 bg-pink text-white">Add</button>
                 </div>
 
 
@@ -97,8 +103,8 @@
                 </div>
 
                 <div class="text-right mt-2">
-                    <button type="button" class="btn">Edit</button>
-                    <button type="button" class="btn">Delete</button>
+                    <button type="button" class="btn bg-pink text-white">Edit</button>
+                    <button type="button" class="btn bg-pink text-white">Delete</button>
                 </div>
             </div>
 
@@ -176,41 +182,38 @@
 
                 </form>
                 <div class="text-right mt-2">
-                    <button type="submit" form="edGroupForm" class="btn mt-2">Add</button>
+                    <button type="submit" form="edGroupForm" class="btn mt-2 bg-pink text-white">Update</button>
                 </div>
             </div>
 
             <!--Row-->
             <div class="col bg-white jumbotron text-dark mr-3 ml-3">
-                    <h4>Add Group</h4>
-                    <form id="newGroupForm" class="form-control bg-gray">
-                        <!-- th:object="${newNews}" th:action="@{/tshome/new}" method="post">-->
-                        <!--    <input type="hidden" th:field="*{id}"/>
-                                <input type="hidden" th:field="*{version}"/>-->
-    
-                        <input type="text" class="form-control rounded text-center" />
-                        <!--th:field="*{content}" form="newNewsForm">-->
-    
-                        <!--Tu ten button cos jest dziwny-->
+                    <input type="text" class="form-control text-center" placeholder="Group Name: sampleGroupName" disabled>
+                    
+                    <form>
+                            <div class="form-group mt-4">
+                            <h4>Add Resource</h4>
+                            <div>
+                              
+                              <label for="files" class="btn bg-pink rounded mt-2 text-white">Add Resource</label>
+                                <input id="files" style="visibility:hidden;" type="file">
+                                                                      
+                            </div>
+                            </div>
                     </form>
-                    <div class="text-right mt-2">
-                        <button type="submit" form="newGroupForm" class="btn mt-2">Add</button>
-                    </div>
-    
-    
-                    <div class="mt-4">
-                        <h4>My Groups</h4>
+                    
+                    <div class="mt-0">
+                        <h4>Group Resources</h4>
                         <div class="bg-gray container pt-2 pb-2 rounded">
                             <ul class="list-group">
                                 <li class="list-group-item"></li>
-                                <!--th:each="one : ${news}" th:text="${one.content}"></li>-->
                             </ul>
                         </div>
                     </div>
     
                     <div class="text-right mt-2">
-                        <button type="button" class="btn">Edit</button>
-                        <button type="button" class="btn">Delete</button>
+                        <button type="button" class="btn bg-pink text-white">Edit</button>
+                        <button type="button" class="btn bg-pink text-white">Delete</button>
                     </div>
                 </div>
         </div>
